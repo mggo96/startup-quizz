@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:startup_quizz/question.dart';
 
 class quizzhome extends StatefulWidget {
   const quizzhome({super.key, required this.title});
@@ -43,7 +44,15 @@ class _MyHomePageState extends State<quizzhome> {
               height: MediaQuery.of(context).size.height * 0.20,
               width: MediaQuery.of(context).size.width * 0.8,
               child: InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => question(
+                              title: '',
+                            )),
+                  );
+                },
                 child: Card(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -62,7 +71,15 @@ class _MyHomePageState extends State<quizzhome> {
               height: MediaQuery.of(context).size.height * 0.20,
               width: MediaQuery.of(context).size.width * 0.8,
               child: InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => question(
+                              title: '',
+                            )),
+                  );
+                },
                 child: Card(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -81,7 +98,15 @@ class _MyHomePageState extends State<quizzhome> {
               height: MediaQuery.of(context).size.height * 0.2,
               width: MediaQuery.of(context).size.width * 0.8,
               child: InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => question(
+                              title: '',
+                            )),
+                  );
+                },
                 child: Card(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
