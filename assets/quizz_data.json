@@ -1,0 +1,152 @@
+[
+  {
+    "Catégorie": "Histoire des Startups",
+    "Question": "1. Quelle entreprise a été fondée dans un garage en Californie en 1976?",
+    "Réponses": [
+      "a) Microsoft",
+      "b) Apple",
+      "c) IBM"
+    ],
+    "Bonne réponse": "b) Apple"
+  },
+  {
+    "Catégorie": "Histoire des Startups",
+    "Question": "2. Quelle startup est devenue la plus grande plateforme de covoiturage?",
+    "Réponses": [
+      "a) Uber",
+      "b) Lyft",
+      "c) Grab"
+    ],
+    "Bonne réponse": "a) Uber"
+  },
+  {
+    "Catégorie": "Histoire des Startups",
+    "Question": "3. Slack a commencé comme un projet annexe pour quelle type d'entreprise?",
+    "Réponses": [
+      "a) Une agence de publicité",
+      "b) Un jeu vidéo",
+      "c) Une banque"
+    ],
+    "Bonne réponse": "b) Un jeu vidéo"
+  },
+  {
+    "Catégorie": "Histoire des Startups",
+    "Question": "4. Quelle entreprise a acheté WhatsApp pour 19 milliards de dollars en 2014?",
+    "Réponses": [
+      "a) Apple",
+      "b) Google",
+      "c) Facebook"
+    ],
+    "Bonne réponse": "c) Facebook"
+  },
+  {
+    "Catégorie": "Histoire des Startups",
+    "Question": "5. Quelle startup est spécialisée dans la vente de lunettes en ligne?",
+    "Réponses": [
+      "a) Lenskart",
+      "b) Warby Parker",
+      "c) GlassesUSA"
+    ],
+    "Bonne réponse": "b) Warby Parker"
+  },
+  {
+    "Catégorie": "Termes des Startups",
+    "Question": "1. Qu'est-ce qu'un \"Unicorn\" dans le monde des startups?",
+    "Réponses": [
+      "a) Une startup évaluée à plus d'un milliard de dollars",
+      "b) Une startup avec une croissance rapide",
+      "c) Une startup dans le domaine de la mode"
+    ],
+    "Bonne réponse": "a) Une startup évaluée à plus d'un milliard de dollars"
+  },
+  {
+    "Catégorie": "Termes des Startups",
+    "Question": "2. Qu'est-ce que le \"Bootstrapping\"?",
+    "Réponses": [
+      "a) Lever des fonds",
+      "b) Démarrer une entreprise sans financement externe",
+      "c) Créer une startup en une nuit"
+    ],
+    "Bonne réponse": "b) Démarrer une entreprise sans financement externe"
+  },
+  {
+    "Catégorie": "Termes des Startups",
+    "Question": "3. Qu'est-ce qu'un \"Pitch\"?",
+    "Réponses": [
+      "a) Une réunion d'équipe",
+      "b) Une présentation de vente",
+      "c) Un type de contrat"
+    ],
+    "Bonne réponse": "b) Une présentation de vente"
+  },
+  {
+    "Catégorie": "Termes des Startups",
+    "Question": "4. Qu'est-ce qu'un \"MVP\"?",
+    "Réponses": [
+      "a) Most Valuable Player",
+      "b) Minimum Viable Product",
+      "c) Maximum Value Proposition"
+    ],
+    "Bonne réponse": "b) Minimum Viable Product"
+  },
+  {
+    "Catégorie": "Termes des Startups",
+    "Question": "5. Qu'est-ce que le \"Burn Rate\"?",
+    "Réponses": [
+      "a) Le taux de croissance",
+      "b) Le taux d'échec",
+      "c) Le taux auquel une entreprise dépense de l'argent"
+    ],
+    "Bonne réponse": "c) Le taux auquel une entreprise dépense de l'argent"
+  },
+  {
+    "Catégorie": "Culture Startup",
+    "Question": "1. Quel est l'objectif principal d'un \"Hackathon\"?",
+    "Réponses": [
+      "a) Pirater des systèmes",
+      "b) Créer rapidement un prototype",
+      "c) Organiser des compétitions de jeux vidéo"
+    ],
+    "Bonne réponse": "b) Créer rapidement un prototype"
+  },
+  {
+    "Catégorie": "Culture Startup",
+    "Question": "2. Dans quel endroit les startups de la Silicon Valley ont-elles souvent commencé?",
+    "Réponses": [
+      "a) Dans des bureaux luxueux",
+      "b) Dans des cafés",
+      "c) Dans des garages"
+    ],
+    "Bonne réponse": "c) Dans des garages"
+  },
+  {
+    "Catégorie": "Culture Startup",
+    "Question": "3. Quel est le but d'un \"Incubateur\" pour startups?",
+    "Réponses": [
+      "a) Refroidir les serveurs",
+      "b) Aider les startups à grandir",
+      "c) Investir dans l'immobilier"
+    ],
+    "Bonne réponse": "b) Aider les startups à grandir"
+  },
+  {
+    "Catégorie": "Culture Startup",
+    "Question": "4. Quelle est la différence entre un \"Angel Investor\" et un \"Venture Capitalist\"?",
+    "Réponses": [
+      "a) L'un est un mentor, l'autre est un investisseur",
+      "b) L'un investit son propre argent, l'autre gère l'argent de tiers",
+      "c) Ils sont identiques"
+    ],
+    "Bonne réponse": "b) L'un investit son propre argent, l'autre gère l'argent de tiers"
+  },
+  {
+    "Catégorie": "Culture Startup",
+    "Question": "5. Qu'est-ce qu'une \"Scale-up\"?",
+    "Réponses": [
+      "a) Une startup qui a échoué",
+      "b) Une startup en phase de croissance rapide",
+      "c) Une petite entreprise"
+    ],
+    "Bonne réponse": "b) Une startup en phase de croissance rapide"
+  }
+]

@@ -32,7 +32,7 @@ class _MyHomePageState extends State<Question> {
                 ),
               ),
             ),
-            const SizedBox(height: 120),
+            const SizedBox(height: 100),
             const RadioListTileDemo(),
           ],
         ),
