@@ -11,16 +11,6 @@ class quizzhome extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<quizzhome> {
-  int _counter = 0;
-
-  get onPressed => null;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,12 +38,12 @@ class _MyHomePageState extends State<quizzhome> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => Question(
+                        builder: (context) => const Question(
                               title: '',
                             )),
                   );
                 },
-                child: Card(
+                child: const Card(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -75,12 +65,12 @@ class _MyHomePageState extends State<quizzhome> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => Question(
+                        builder: (context) => const Question(
                               title: '',
                             )),
                   );
                 },
-                child: Card(
+                child: const Card(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -102,12 +92,12 @@ class _MyHomePageState extends State<quizzhome> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => Question(
+                        builder: (context) => const Question(
                               title: '',
                             )),
                   );
                 },
-                child: Card(
+                child: const Card(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

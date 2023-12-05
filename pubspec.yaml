@@ -49,7 +49,7 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-     - assets/json.dart
+     - assets/quizz_data.json
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
