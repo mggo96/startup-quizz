@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:startup_quizz/question.dart';
 
-class quizzhome extends StatefulWidget {
-  const quizzhome({super.key, required this.title});
+class QuizzHome extends StatefulWidget {
+  const QuizzHome({super.key, required this.title});
 
   final String title;
 
   @override
-  State<quizzhome> createState() => _MyHomePageState();
+  State<QuizzHome> createState() => _QuizzHome();
 }
 
-class _MyHomePageState extends State<quizzhome> {
+class _QuizzHome extends State<QuizzHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,90 +30,58 @@ class _MyHomePageState extends State<quizzhome> {
               "commençons",
               style: TextStyle(fontSize: 25.0),
             ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.20,
-              width: MediaQuery.of(context).size.width * 0.8,
-              child: InkWell(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const Question(
-                              title: '',
-                            )),
-                  );
-                },
-                child: const Card(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.question_mark,
-                        size: 90.0,
-                      ),
-                      Text("histoire", style: TextStyle(fontSize: 30)),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.20,
-              width: MediaQuery.of(context).size.width * 0.8,
-              child: InkWell(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const Question(
-                              title: '',
-                            )),
-                  );
-                },
-                child: const Card(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.book,
-                        size: 90.0,
-                      ),
-                      Text("histoire", style: TextStyle(fontSize: 30)),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.2,
-              width: MediaQuery.of(context).size.width * 0.8,
-              child: InkWell(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const Question(
-                              title: '',
-                            )),
-                  );
-                },
-                child: const Card(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.graphic_eq,
-                        size: 90.0,
-                      ),
-                      Text("histoire", style: TextStyle(fontSize: 30)),
-                    ],
-                  ),
-                ),
-              ),
-            ),
+            BoutonCategorie(categorie: "histoire", image: Icons.qr_code),
+            BoutonCategorie(categorie: "pas histoire", image: Icons.javascript),
+            BoutonCategorie(categorie: "jnfj", image: Icons.radar_sharp),
           ],
         ),
       ),
     );
   }
+}
+
+class BoutonCategorie extends StatelessWidget {
+  final String categorie;
+  final IconData image;
+
+  BoutonCategorie({
+    required this.categorie,
+    required this.image,
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: MediaQuery.of(context).size.height * 0.20,
+      width: MediaQuery.of(context).size.width * 0.8,
+      child: InkWell(
+        onTap: () {
+          allerALaPage(context);
+        },
+        child: Card(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                image,
+                size: 90.0,
+              ),
+              Text(categorie, style: const TextStyle(fontSize: 30)),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+void allerALaPage(BuildContext context) {
+  Navigator.push(
+    context,
+    MaterialPageRoute(
+        builder: (context) => const Question(
+              title: '',
+            )),
+  );
 }

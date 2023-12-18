@@ -1,17 +1,51 @@
 import 'package:flutter/material.dart';
 
+import 'insertJson.dart';
+
 class Question extends StatefulWidget {
   const Question({super.key, required this.title});
 
   final String title;
 
   @override
-  State<Question> createState() => _MyHomePageState();
+  State<Question> createState() => _QuestionState();
 }
 
-class _MyHomePageState extends State<Question> {
+class _QuestionState extends State<Question> {
+  List<Quizz>? monQuizz;
+
+  String? _selectedAnswer;
+
+  @override
+  void initState() {
+    super.initState();
+    chargerQuizz();
+  }
+
+  Future<void> chargerQuizz() async {
+    List<Quizz> quizList =
+        await Quizz.convertirJson(); // Récupère une liste de Quizz
+
+    setState(() {
+      monQuizz = quizList;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+    if (monQuizz == null || monQuizz!.isEmpty) {
+      // Si c'est le cas, retourne un Scaffold (un layout de base dans Flutter)
+      return Scaffold(
+        appBar: AppBar(
+          title: Text('Démarrage Quizz'),
+        ),
+        // Affiche un indicateur de chargement au centre de l'écran
+        body: Center(child: CircularProgressIndicator()),
+      );
+    }
+
+    Quizz currentQuizz = monQuizz![2];
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -24,9 +58,9 @@ class _MyHomePageState extends State<Question> {
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.8,
               height: MediaQuery.of(context).size.height * 0.35,
-              child: const Card(
+              child: Card(
                 child: Text(
-                  "la question",
+                  currentQuizz.question,
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 30),
                 ),

@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: const quizzhome(title: 'Flutter Demo Home Page'),
+      home: const QuizzHome(title: 'jn'),
     );
   }
 }
