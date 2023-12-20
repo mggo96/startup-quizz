@@ -3,18 +3,21 @@ import 'package:flutter/material.dart';
 import 'insertJson.dart';
 
 class Question extends StatefulWidget {
-  const Question({super.key, required this.title});
-
-  final String title;
+  final String titreCategorie;
+  Question({super.key, required this.titreCategorie});
 
   @override
-  State<Question> createState() => _QuestionState();
+  State<Question> createState() =>
+      _QuestionState(titreCategorie: titreCategorie);
 }
 
 class _QuestionState extends State<Question> {
+  final String titreCategorie;
   List<Quizz>? monQuizz;
-
+  String _selectedOption = 'reponse_un';
   String? _selectedAnswer;
+
+  _QuestionState({required this.titreCategorie});
 
   @override
   void initState() {
@@ -23,11 +26,10 @@ class _QuestionState extends State<Question> {
   }
 
   Future<void> chargerQuizz() async {
-    List<Quizz> quizList =
-        await Quizz.convertirJson(); // Récupère une liste de Quizz
-
+    List<Quizz> quizList = await Quizz.convertirJson();
     setState(() {
-      monQuizz = quizList;
+      monQuizz =
+          quizList.where((quizz) => quizz.categorie == titreCategorie).toList();
     });
   }
 
@@ -37,19 +39,20 @@ class _QuestionState extends State<Question> {
       // Si c'est le cas, retourne un Scaffold (un layout de base dans Flutter)
       return Scaffold(
         appBar: AppBar(
-          title: Text('Démarrage Quizz'),
+          title: const Text('Démarrage Quizz'),
         ),
         // Affiche un indicateur de chargement au centre de l'écran
-        body: Center(child: CircularProgressIndicator()),
+        body: const Center(child: CircularProgressIndicator()),
       );
     }
 
-    Quizz currentQuizz = monQuizz![2];
+    int i = 0;
+    Quizz currentQuizz = monQuizz![i];
 
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text("histoire des startup"),
+        title: Text(currentQuizz.categorie),
       ),
       body: Center(
         child: Column(
@@ -67,62 +70,46 @@ class _QuestionState extends State<Question> {
               ),
             ),
             const SizedBox(height: 100),
-            const RadioListTileDemo(),
+            Column(
+              children: <Widget>[
+                Align(
+                  alignment: Alignment.center,
+                  child: RadioListTile<String>(
+                    title: Text(currentQuizz.reponse[0]),
+                    value: currentQuizz.reponse[0],
+                    groupValue: _selectedOption,
+                    onChanged: (value) {
+                      setState(() {
+                        _selectedOption = value!;
+                      });
+                    },
+                  ),
+                ),
+                RadioListTile<String>(
+                  title: Text(currentQuizz.reponse[1]),
+                  value: currentQuizz.reponse[1],
+                  groupValue: _selectedOption,
+                  onChanged: (value) {
+                    setState(() {
+                      _selectedOption = value!;
+                    });
+                  },
+                ),
+                RadioListTile<String>(
+                  title: Text(currentQuizz.reponse[2]),
+                  value: currentQuizz.reponse[2],
+                  groupValue: _selectedOption,
+                  onChanged: (value) {
+                    setState(() {
+                      _selectedOption = value!;
+                    });
+                  },
+                ),
+              ],
+            ),
           ],
         ),
       ),
-    );
-  }
-}
-
-class RadioListTileDemo extends StatefulWidget {
-  const RadioListTileDemo({super.key});
-
-  @override
-  _RadioListTileDemoState createState() => _RadioListTileDemoState();
-}
-
-class _RadioListTileDemoState extends State<RadioListTileDemo> {
-  String _selectedOption = 'reponse_un';
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        Align(
-          alignment: Alignment.center,
-          child: RadioListTile<String>(
-            title: const Text('reponse 5'),
-            value: 'reponse 5',
-            groupValue: _selectedOption,
-            onChanged: (value) {
-              setState(() {
-                _selectedOption = value!;
-              });
-            },
-          ),
-        ),
-        RadioListTile<String>(
-          title: const Text('reponse 2'),
-          value: 'reponse 2',
-          groupValue: _selectedOption,
-          onChanged: (value) {
-            setState(() {
-              _selectedOption = value!;
-            });
-          },
-        ),
-        RadioListTile<String>(
-          title: const Text('reponse 3'),
-          value: 'reponse 3',
-          groupValue: _selectedOption,
-          onChanged: (value) {
-            setState(() {
-              _selectedOption = value!;
-            });
-          },
-        ),
-      ],
     );
   }
 }

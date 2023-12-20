@@ -25,7 +25,6 @@ class Quizz {
     late List<Quizz> listQuizz = [];
 // creer a partir de ça un objet quizz(list[1])
     for (int i = 0; jsonData.length > i; i++) {
-      print(jsonData);
       Quizz j = Quizz(
         categorie: jsonData[i]["Catégorie"],
         question: jsonData[i]["Question"],
@@ -35,8 +34,6 @@ class Quizz {
 
       listQuizz.add(j);
     }
-    print("jhgfj");
-    print(listQuizz);
     return listQuizz;
     // Ici, il faudrait ajouter une boucle pour parcourir jsonData,
     // créer des objets Quizz et les ajouter à listQuizz

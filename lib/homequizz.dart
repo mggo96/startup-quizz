@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:startup_quizz/question.dart';
 
 class QuizzHome extends StatefulWidget {
-  const QuizzHome({super.key, required this.title});
-
-  final String title;
+  const QuizzHome({super.key});
 
   @override
   State<QuizzHome> createState() => _QuizzHome();
@@ -30,9 +28,12 @@ class _QuizzHome extends State<QuizzHome> {
               "commençons",
               style: TextStyle(fontSize: 25.0),
             ),
-            BoutonCategorie(categorie: "histoire", image: Icons.qr_code),
-            BoutonCategorie(categorie: "pas histoire", image: Icons.javascript),
-            BoutonCategorie(categorie: "jnfj", image: Icons.radar_sharp),
+            BoutonCategorie(
+                categorie: "Histoire des Startups", image: Icons.lan),
+            BoutonCategorie(
+                categorie: "Termes des Startups", image: Icons.maps_home_work),
+            BoutonCategorie(
+                categorie: "Culture Startup", image: Icons.padding_outlined),
           ],
         ),
       ),
@@ -57,7 +58,7 @@ class BoutonCategorie extends StatelessWidget {
       width: MediaQuery.of(context).size.width * 0.8,
       child: InkWell(
         onTap: () {
-          allerALaPage(context);
+          allerALaPage(context, categorie);
         },
         child: Card(
           child: Column(
@@ -76,12 +77,10 @@ class BoutonCategorie extends StatelessWidget {
   }
 }
 
-void allerALaPage(BuildContext context) {
+void allerALaPage(BuildContext context, String categories) {
   Navigator.push(
     context,
     MaterialPageRoute(
-        builder: (context) => const Question(
-              title: '',
-            )),
+        builder: (context) => Question(titreCategorie: categories)),
   );
 }
